@@ -245,8 +245,17 @@ Go
 
 -- Question 2 (5% pts): How can you set permissions, so that the public group CANNOT select data 
 -- from each table, but can select data from each view?
+Go
+Revoke Select on Categories From Public;
+Revoke Select on Employees From Public;
+Revoke Select on Inventories From Public;
+Revoke Select on Products From Public
 
-
+Grant Select on [dbo].[vCategories] to Public;
+Grant Select on [dbo].[vEmployees] to Public;
+Grant Select on [dbo].[vInventories] to Public;
+Grant Select on [dbo].[vProducts] to Public;
+Go
 -- Question 3 (10% pts): How can you create a view to show a list of Category and Product names, 
 -- and the price of each product?
 -- Order the result by the Category and Product!
